@@ -41,6 +41,7 @@ contract Counter {
         uint256 reward = calculateReward(msg.sender);
         userStake.claimed = true;
         payable(msg.sender).call{value: userStake.amount + reward}("");
+        
 
     }
 
