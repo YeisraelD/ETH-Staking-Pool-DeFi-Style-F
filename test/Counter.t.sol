@@ -47,6 +47,8 @@ contract CounterTest is Test {
         vm.warp(block.timestamp + 5); // simulate 5 seconds
         uint256 balanceBefore = user.balance;
 
+        vm.deal(address(counter), 10 ether); // fund contract to pay rewards
+
         counter.unstake();
 
         uint256 balanceAfter = user.balance;
